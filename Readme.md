@@ -16,6 +16,7 @@ Asp.NET MVC SignalR 聊天示例程序
 - [x] 发送给组
 - [x] 发送给全体
 - [x] 发送文本
+- [x] 服务器端主动给客户端发消息
 - [ ] 发送图片： 参考 http://www.cppcns.com/wangluo/aspnet/147133.html， 用base64传递图片
 
 

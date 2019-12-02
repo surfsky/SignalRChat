@@ -144,8 +144,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="Components\ChatClient.cs" />
     <Compile Include="Components\ChatHub.cs" />
-    <Compile Include="Components\SignalR.cs" />
+    <Compile Include="Components\ChatMessages.cs" />
+    <Compile Include="Components\ChatConnection.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
