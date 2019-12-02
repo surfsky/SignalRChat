@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Chat";
+}
+
+<h2>@ViewBag.Message</h2>
+<label>用户</label>
+<input type="text" id="userName" list="users" />
+<datalist id="users">
+    <option value="Kevin">
+    <option value="Cherry">
+    <option value="Melissa">
+</datalist>
+<input type="button" id="btnConnect" value="登录" class="btn" />
+<input type="button" id="btnDisconnect" value="注销" class="btn" />
+<input type="button" id="btnExit" value="断开" class="btn" hidden="hidden" />
+<br />
+
+<label>组名</label>
+<input type="text" id="group" list="groups" />
+<datalist id="groups">
+    <option value="Group1">
+    <option value="Group2">
+    <option value="Group3">
+</datalist>
+<input type="button" id="btnJoinGroup" value="加入组" class="btn" />
+<input type="button" id="btnQuitGroup" value="退出组" class="btn" />
+<br />
+
+<label>用户ID</label>
+<input type="text" id="target" />
+<label for="msg">消息</label>
+<input type="text" id="msg" />
+<input type="button" id="btnTalkTo" value="私信" class="btn" />
+<input type="button" id="btnTalkToGroup" value="组播" class="btn" />
+<input type="button" id="btnTalkToAll" value="广播" class="btn" />
+<ul id="messages"></ul>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(function () {
+            // SignalR connection
+            var connection = $.connection('/Chat');
+            connection.received(function (data) {
+                var o = JSON.parse(data);
+                var item = stringFormat("<li>[{0}] {1} say to {2} : {3}</li>", o.Date, o.FromName, o.ToName, o.Data);
+                if (o.ToName == null)
+                    item = stringFormat("<li>[{0}] {1}: {2} ({3})</li>", o.Date, o.FromName, o.Data, o.Type);
+                $('#messages').append(item);
+            });
+            connection.start();
+
+            // 发送信息到服务器端
+            function send(o)                      { connection.send(JSON.stringify(o));}
+            function connect(name)                { send({ Type: 'Connect', Name: name }); }
+            function disconnect(name)             { send({ Type: 'Disconnect', Name: name });}
+            function joinGroup(group)             { send({ Type: 'JoinGroup', To: group });}
+            function quitGroup(group)             { send({ Type: 'QuitGroup', To: group }); }
+            function talkTo(to, msg)              { send({ Type: 'TalkToOne', To: to, Data: msg });}
+            function talkToAll(msg)               { send({ Type: 'TalkToAll', Data: msg });}
+            function talkToGroup(group, msg)      { send({ Type: 'TalkToGroup', To: group, Data: msg });}
+
+            // 按钮事件
+            $("#btnExit").click(function ()       { connection.stop(); });
+            $("#btnConnect").click(function ()    { connect($("#userName").val()); });
+            $("#btnDisconnect").click(function () { disconnect($("#userName").val()); });
+            $("#btnJoinGroup").click(function ()  { joinGroup($("#group").val()); });
+            $("#btnQuitGroup").click(function ()  { quitGroup($("#group").val()); });
+            $("#btnTalkTo").click(function ()     { talkTo($("#target").val(), $("#msg").val()); });
+            $("#btnTalkToGroup").click(function (){ talkToGroup($("#group").val(), $("#msg").val()); });
+            $("#btnTalkToAll").click(function ()  { talkToAll($("#msg").val()); });
+        });
+
+         // 字符串格式化
+        function stringFormat() {
+            if (arguments.length == 0)
+                return null;
+            var str = arguments[0];
+            for (var i = 1; i < arguments.length; i++) {
+                var re = new RegExp('\\{' + (i - 1) + '\\}', 'gm');
+                str = str.replace(re, arguments[i]);
+            }
+            return str;
+        }
+    </script>
+}
+

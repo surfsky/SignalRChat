@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Chat";
+}
+
+<h2>@ViewBag.Message</h2>
+<input type="text" id="msg" />
+<input type="button" id="broadcast" value="发送" />
+<input type="button" id="btnStop" value="停止" />
+<ul id="messages"></ul>
+
+@section scripts
+{
+<script type="text/javascript">
+    $(function () {
+        var connection = $.connection('/Chat');
+        connection.received(function (data) {
+            $('#messages').append('<li>' + data + '</li>');
+        });
+        connection.start();
+
+        $("#broadcast").click(function () {
+            connection.send($('#msg').val());
+        });
+        $("#btnStop").click(function () {
+            connection.stop();
+        });
+    });
+</script>
+}
+

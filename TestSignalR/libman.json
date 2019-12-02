@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "bootstrap-fileinput@5.0.7",
+      "destination": "lib/bootstrap-fileinput/"
+    }
+  ]
+}
