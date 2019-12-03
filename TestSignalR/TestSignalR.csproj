@@ -277,8 +277,8 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Chat3.cshtml" />
-    <Content Include="Views\Home\Chat4.cshtml" />
-    <Content Include="Views\Home\Chat.cshtml" />
+    <Content Include="Views\Home\Chat1.cshtml" />
+    <Content Include="Views\Home\Chat2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

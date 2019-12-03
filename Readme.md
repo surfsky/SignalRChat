@@ -21,8 +21,13 @@ Asp.NET MVC SignalR 聊天示例程序
 
 
 # 截图
-![](snap.png)
+
+- 简单聊天
+![](chat1.png)
+
+- 完整聊天
+![](chat2.png)
 
 # More
 
-Jabbr 即时聊天
+[Jabbr](https://github.com/JabbR/JabbR) , SignalR 作者写的聊天室程序。

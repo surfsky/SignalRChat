@@ -25,9 +25,15 @@ namespace TestSignalR.Controllers
             return View();
         }
 
-        public ActionResult Chat()
+        public ActionResult Chat1()
         {
-            ViewBag.Message = "Chat";
+            ViewBag.Message = "Chat1";
+            return View();
+        }
+
+        public ActionResult Chat2()
+        {
+            ViewBag.Message = "Chat2";
             return View();
         }
     }

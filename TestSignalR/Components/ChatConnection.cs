@@ -22,7 +22,16 @@ namespace TestSignalR.Components
         protected override Task OnReceived(IRequest request, string connectionId, string data)
         {
             // 解析data
-            var msg = data.ParseJson<Message>();
+            Message msg = null;
+            try 
+            {
+                msg = data.ParseJson<Message>(); 
+            }
+            catch 
+            {
+                return Connection.Broadcast(data);
+            }
+
             var from = ChatClient.Get(connectionId);
             var to = msg.To.IsEmpty() ? null : ChatClient.Get(msg.To);
 
@@ -63,9 +72,8 @@ namespace TestSignalR.Components
             if (msg.Type == MessageType.TalkToGroup)     
                 return Groups.Send(msg.To, Reply(MessageType.TalkToGroup, from, to, msg.Data));
 
-
-            // 返回
-            return Connection.Broadcast(connectionId, data);
+            //
+            return Connection.Broadcast(data);
         }
 
         /// <summary>包裹发送到客户端的信息</summary>
