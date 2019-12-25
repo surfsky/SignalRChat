@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.Owin;
 using Owin;
-using TestSignalR.Components;
+using App.Chats;
 
 [assembly: OwinStartup(typeof(TestSignalR.App_Start.Startup))]
 

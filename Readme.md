@@ -1,6 +1,6 @@
 ﻿# About
 
-Asp.NET MVC SignalR 聊天示例程序
+Asp.NET MVC/WebForm SignalR 聊天示例程序
 
 # Author
 
@@ -31,3 +31,11 @@ Asp.NET MVC SignalR 聊天示例程序
 # More
 
 [Jabbr](https://github.com/JabbR/JabbR) , SignalR 作者写的聊天室程序。
+
+
+# History
+
+2019-12-25
+- 拆出项目 App.Chats
+- 新增项目 Asp.net signalR WebForm 
+
