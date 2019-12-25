@@ -77,3 +77,5 @@
 \\Mac\Home\Downloads\Dev\Dev\2019\SignalR\TestSignalR-github\TestSignalRWebForm\bin\System.Net.Http.Formatting.xml
 \\Mac\Home\Downloads\Dev\Dev\2019\SignalR\TestSignalR-github\TestSignalRWebForm\bin\System.Web.Http.xml
 \\Mac\Home\Downloads\Dev\Dev\2019\SignalR\TestSignalR-github\TestSignalRWebForm\bin\System.Web.Http.Cors.xml
+\\Mac\Home\Downloads\Dev\Dev\2019\SignalR\TestSignalR-github\TestSignalRWebForm\bin\Microsoft.Owin.Cors.dll
+\\Mac\Home\Downloads\Dev\Dev\2019\SignalR\TestSignalR-github\TestSignalRWebForm\bin\Microsoft.Owin.Cors.xml

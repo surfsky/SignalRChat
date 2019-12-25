@@ -38,4 +38,5 @@ Asp.NET MVC/WebForm SignalR 聊天示例程序
 2019-12-25
 - 拆出项目 App.Chats
 - 新增项目 Asp.net signalR WebForm 
+- 解决跨域问题
 
