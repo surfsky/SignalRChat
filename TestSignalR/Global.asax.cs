@@ -1,5 +1,3 @@
-using App.Core;
-using Microsoft.AspNet.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Microsoft.AspNet.SignalR;
+using App.Core;
 using App.Chats;
 
 namespace TestSignalR
@@ -32,7 +32,7 @@ namespace TestSignalR
             var t = new System.Timers.Timer(1000 * 60 * minutes);
             t.Elapsed += (s, te) =>
             {
-                var msg = new MessageReply(MessageType.Timer, null, null, null);
+                var msg = new ServerMessage(MessageType.Timer, null, null, null);
                 var signalContext = GlobalHost.ConnectionManager.GetConnectionContext<ChatConnection>();
                 signalContext.Connection.Broadcast(msg.ToJson());
             };

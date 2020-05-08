@@ -22,10 +22,10 @@ namespace App.Chats
         protected override Task OnReceived(IRequest request, string connectionId, string data)
         {
             // 解析data
-            Message msg = null;
+            ClientMessage msg = null;
             try 
             {
-                msg = data.ParseJson<Message>(); 
+                msg = data.ParseJson<ClientMessage>(); 
             }
             catch 
             {
@@ -36,15 +36,15 @@ namespace App.Chats
             var to = msg.To.IsEmpty() ? null : ChatClient.Get(msg.To);
 
             // 注册操作（将用户信息和ConnectionID联系起来）
-            if (msg.Type == MessageType.Connect)
+            if (msg.Type == MessageType.SignIn)
             {
                 from = ChatClient.Connect(msg.Name, connectionId);
-                return Connection.Send(connectionId, Reply(MessageType.Connect, from, to, $"{connectionId}"));
+                return Connection.Send(connectionId, Reply(MessageType.SignIn, from, to, $"{connectionId}"));
             }
-            if (msg.Type == MessageType.Disconnect)
+            if (msg.Type == MessageType.SignOut)
             {
                 ChatClient.Disconnect(msg.Name);
-                return Connection.Send(connectionId, Reply(MessageType.Disconnect, from, to, ""));
+                return Connection.Send(connectionId, Reply(MessageType.SignOut, from, to, ""));
             }
 
             // 组操作
@@ -79,7 +79,7 @@ namespace App.Chats
         /// <summary>包裹发送到客户端的信息</summary>
         public string Reply(MessageType type, ChatClient from, ChatClient to, object data)
         {
-            return new MessageReply(type, data, from, to).ToJson();
+            return new ServerMessage(type, from, to, data).ToJson();
         }
     }
 

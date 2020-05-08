@@ -28,15 +28,20 @@ Asp.NET MVC/WebForm SignalR 聊天示例程序
 - 完整聊天
 ![](chat2.png)
 
-# More
-
-[Jabbr](https://github.com/JabbR/JabbR) , SignalR 作者写的聊天室程序。
-
 
 # History
 
-2019-12-25
+2010-05
++ 新增Aspnetcore 3.1 项目（API 变化了很多）
+
+2019-12
 - 拆出项目 App.Chats
 - 新增项目 Asp.net signalR WebForm 
 - 解决跨域问题
+
+# Reference
+
+- https://dotnet.microsoft.com/apps/aspnet/signalr
+- https://docs.microsoft.com/zh-cn/aspnet/core/tutorials/signalr?tabs=visual-studio&view=aspnetcore-3.1
+- [Jabbr](https://github.com/JabbR/JabbR) , SignalR 作者写的聊天室程序。
 

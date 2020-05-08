@@ -18,3 +18,5 @@
 /TestSignalR/bin/Microsoft.AspNet.SignalR.Core.pdb
 /TestSignalR/bin/Microsoft.AspNet.SignalR.SystemWeb.pdb
 /TestSignalR/bin/TestSignalR.pdb
+/.vs
+/TestSignalRCore/obj

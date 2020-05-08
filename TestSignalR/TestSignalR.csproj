@@ -150,6 +150,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="Chats\ChatClient.cs" />
+    <Compile Include="Chats\ChatConnection.cs" />
+    <Compile Include="Chats\ChatHub.cs" />
+    <Compile Include="Chats\ChatMessages.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -392,12 +396,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\App.Chats\App.Chats.csproj">
-      <Project>{6c670047-b5f8-4a56-9a79-557e105a4a96}</Project>
-      <Name>App.Chats</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

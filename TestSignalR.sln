@@ -8,11 +8,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{59006F86-B095-4824-A2E8-60A782769A17}"
 	ProjectSection(SolutionItems) = preProject
 		Readme.md = Readme.md
+		SignalR.md = SignalR.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSignalRWebForm", "TestSignalRWebForm\TestSignalRWebForm.csproj", "{7416B19C-86EA-4DD7-8A67-EA80D7907E55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Chats", "App.Chats\App.Chats.csproj", "{6C670047-B5F8-4A56-9A79-557E105A4A96}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSignalRCore", "TestSignalRCore\TestSignalRCore.csproj", "{3536C567-E172-4F7F-B86F-D1914BC82A41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,10 +29,10 @@ Global
 		{7416B19C-86EA-4DD7-8A67-EA80D7907E55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7416B19C-86EA-4DD7-8A67-EA80D7907E55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7416B19C-86EA-4DD7-8A67-EA80D7907E55}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6C670047-B5F8-4A56-9A79-557E105A4A96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C670047-B5F8-4A56-9A79-557E105A4A96}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C670047-B5F8-4A56-9A79-557E105A4A96}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C670047-B5F8-4A56-9A79-557E105A4A96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3536C567-E172-4F7F-B86F-D1914BC82A41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3536C567-E172-4F7F-B86F-D1914BC82A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3536C567-E172-4F7F-B86F-D1914BC82A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3536C567-E172-4F7F-B86F-D1914BC82A41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
