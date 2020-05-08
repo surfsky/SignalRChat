@@ -44,6 +44,7 @@ namespace TestSignalRCore
                 endpoints.MapRazorPages();
                 endpoints.MapHub<ChatHub>("/Chat");
                 endpoints.MapHub<IMHub>("/IM");
+                endpoints.MapHub<DrawHub>("/Draw");
             });
         }
     }

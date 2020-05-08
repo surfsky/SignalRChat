@@ -6,7 +6,16 @@ Asp.NET MVC/WebForm SignalR 聊天示例程序
 
 <http://github.com/surfsky/TestSignalR>
 
-# 功能
+# Chat 功能
+- [x] 发送
+- [x] 广播
+- [x] 接收广播并显示
+
+# 绘图功能
+- [x] 拖动同步
+- [x] 绘图同步
+
+# IM 功能
 - [x] 连接（关联用户名和ConnectionID）
 - [x] 退出
 - [x] 加入组
@@ -27,6 +36,12 @@ Asp.NET MVC/WebForm SignalR 聊天示例程序
 
 - 完整聊天
 ![](chat2.png)
+
+- 拖动
+![](moveshape.png)
+
+- 白板绘图
+![](whiteboard.png)
 
 
 # History
