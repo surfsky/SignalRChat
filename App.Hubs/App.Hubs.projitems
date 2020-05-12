@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>adc17fe3-2868-432c-9de7-c5dc0e87377a</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>App.Hubs</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ChatClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChatConnection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChatHub.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChatMessages.cs" />
+  </ItemGroup>
+</Project>

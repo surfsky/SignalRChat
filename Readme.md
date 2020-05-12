@@ -1,21 +1,25 @@
 ﻿# About
 
-Asp.NET MVC/WebForm SignalR 聊天示例程序
+SignalR webform, mvc, aspnetcore, windowform 聊天示例程序
 
-# Author
+- http://github.com/surfsky/TestSignalR
+- http://surfsky.github.com
+- http://surfsky.cnblogs.com
 
-<http://github.com/surfsky/TestSignalR>
+LastUpdate: 2020-05
 
-# Chat 功能
+# 功能
+
+## Chat 功能
 - [x] 发送
 - [x] 广播
 - [x] 接收广播并显示
 
-# 绘图功能
+## 绘图功能
 - [x] 拖动同步
 - [x] 绘图同步
 
-# IM 功能
+## IM 功能
 - [x] 连接（关联用户名和ConnectionID）
 - [x] 退出
 - [x] 加入组
@@ -32,26 +36,38 @@ Asp.NET MVC/WebForm SignalR 聊天示例程序
 # 截图
 
 - 简单聊天
+
 ![](chat1.png)
 
 - 完整聊天
+
 ![](chat2.png)
 
+- WindowForm 联动
+
+![](chat.png)
+
 - 拖动
+
 ![](moveshape.png)
 
 - 白板绘图
+
 ![](whiteboard.png)
 
 
 # History
 
-2010-05
-+ 新增Aspnetcore 3.1 项目（API 变化了很多）
+
+
+2020-05
++ 增加 Aspnetcore 3.1 项目（API 变化了很多）
++ 增加 Window Form signalr 项目
++ App.Chats 改为代码共享项目
 
 2019-12
 - 拆出项目 App.Chats
-- 新增项目 Asp.net signalR WebForm 
+- 增加项目 Asp.net signalR WebForm 
 - 解决跨域问题
 
 # Reference

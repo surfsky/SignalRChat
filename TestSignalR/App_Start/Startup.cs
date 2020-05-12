@@ -6,7 +6,6 @@ using Owin;
 using App.Chats;
 
 [assembly: OwinStartup(typeof(TestSignalR.App_Start.Startup))]
-
 namespace TestSignalR.App_Start
 {
     public class Startup

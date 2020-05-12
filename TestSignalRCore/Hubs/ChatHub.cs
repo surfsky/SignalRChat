@@ -11,9 +11,10 @@ namespace App.Hubs
     /// </summary>
     public class ChatHub : Hub
     {
-        public async Task SendMessage(string user, string message)
+        public async Task Broadcast(string user, string message)
         {
-            await Clients.All.SendAsync("ChatMessage", user, message);
+            // 给所有客户端发消息，附带2个参数
+            await Clients.All.SendAsync("broadcastMessage", user, message);
         }
     }
 }

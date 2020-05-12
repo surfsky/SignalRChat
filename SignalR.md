@@ -8,3 +8,6 @@ HubĞ­ÒéµÄÄ¬ÈÏĞ­ÒéÊÇJSON, »¹Ö§³ÖÁíÍâÒ»¸öĞ­ÒéÊÇMessagePack. MessagePackÊÇ¶ş½øÖÆ¸ñÊ
 
 
 
+ps. 
+    ¸Ğ¾õ¾ÍÊÇwcfµÄ¼ò»¯ºÍWeb»¯£¬ÇÒ¿Í»§¶ËÎŞĞè¹Ø×¢ÓÃµÄÊÇÊ²Ã´Í¨µÀ
+    WindowForm¿ÉÓÃ SignalR.Client °ü»ñÈ¡Ö§³Ö

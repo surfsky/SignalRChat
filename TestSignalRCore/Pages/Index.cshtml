@@ -5,7 +5,7 @@
     <div class="row">&nbsp;</div>
     <div class="row">
         <div class="col-2">User</div>
-        <div class="col-4"><input type="text" id="userInput" /></div>
+        <div class="col-4"><input type="text" id="userInput" value="kevin" /></div>
     </div>
     <div class="row">
         <div class="col-2">Message</div>
@@ -33,12 +33,13 @@
     "use strict";
     document.getElementById("sendButton").disabled = true;
 
+    // 连接
     var connection = new signalR.HubConnectionBuilder().withUrl("/Chat").build();
 
     // 接收到服务器端发来的消息
-    connection.on("ChatMessage", function (user, message) {
+    connection.on("broadcastMessage", function (user, message) {
         var msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        var encodedMsg = user + " says " + msg;
+        var encodedMsg = user + ": " + msg;
         var li = document.createElement("li");
         li.textContent = encodedMsg;
         document.getElementById("messagesList").appendChild(li);
@@ -55,8 +56,8 @@
     document.getElementById("sendButton").addEventListener("click", function (event) {
         var user = document.getElementById("userInput").value;
         var message = document.getElementById("messageInput").value;
-        // 调用服务器端方法 SendMessage
-        connection.invoke("SendMessage", user, message).catch(function (err) {
+        // 调用服务器端方法
+        connection.invoke("Broadcast", user, message).catch(function (err) {
             return console.error(err.toString());
         });
         event.preventDefault();

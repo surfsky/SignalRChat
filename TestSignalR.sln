@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSignalR", "TestSignalR\TestSignalR.csproj", "{611F818B-E3B9-47D6-A346-A95837149464}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSignalRMVC", "TestSignalR\TestSignalRMVC.csproj", "{611F818B-E3B9-47D6-A346-A95837149464}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{59006F86-B095-4824-A2E8-60A782769A17}"
 	ProjectSection(SolutionItems) = preProject
@@ -13,9 +13,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSignalRWebForm", "TestSignalRWebForm\TestSignalRWebForm.csproj", "{7416B19C-86EA-4DD7-8A67-EA80D7907E55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSignalRCore", "TestSignalRCore\TestSignalRCore.csproj", "{3536C567-E172-4F7F-B86F-D1914BC82A41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestSignalRCore", "TestSignalRCore\TestSignalRCore.csproj", "{3536C567-E172-4F7F-B86F-D1914BC82A41}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "App.Hubs", "App.Hubs\App.Hubs.shproj", "{ADC17FE3-2868-432C-9DE7-C5DC0E87377A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSignalRWin", "TestSignalRWin\TestSignalRWin.csproj", "{1CB707EC-8151-473B-AE94-1A788B279C4F}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		App.Hubs\App.Hubs.projitems*{611f818b-e3b9-47d6-a346-a95837149464}*SharedItemsImports = 4
+		App.Hubs\App.Hubs.projitems*{7416b19c-86ea-4dd7-8a67-ea80d7907e55}*SharedItemsImports = 4
+		App.Hubs\App.Hubs.projitems*{adc17fe3-2868-432c-9de7-c5dc0e87377a}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -33,6 +42,10 @@ Global
 		{3536C567-E172-4F7F-B86F-D1914BC82A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3536C567-E172-4F7F-B86F-D1914BC82A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3536C567-E172-4F7F-B86F-D1914BC82A41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CB707EC-8151-473B-AE94-1A788B279C4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CB707EC-8151-473B-AE94-1A788B279C4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CB707EC-8151-473B-AE94-1A788B279C4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CB707EC-8151-473B-AE94-1A788B279C4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
