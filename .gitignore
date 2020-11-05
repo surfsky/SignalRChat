@@ -20,3 +20,7 @@
 /TestSignalR/bin/TestSignalR.pdb
 /.vs
 /TestSignalRCore/obj
+/TestSignalRWin/obj/Debug
+/TestSignalRWebForm/obj/Debug
+/TestSignalRWebForm/obj
+/TestSignalRWin/obj

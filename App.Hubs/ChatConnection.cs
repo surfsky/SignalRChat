@@ -32,6 +32,7 @@ namespace App.Chats
                 return Connection.Broadcast(data);
             }
 
+            // 处理统一结构的对话信息
             var from = ChatClient.Get(connectionId);
             var to = msg.To.IsEmpty() ? null : ChatClient.Get(msg.To);
 

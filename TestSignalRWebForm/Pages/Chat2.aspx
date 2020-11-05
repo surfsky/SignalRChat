@@ -1,43 +1,47 @@
 ﻿<%@ Page MasterPageFile="~/Site.Master"  %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 <script src="/Scripts/jquery.signalR-2.4.1.min.js" ></script>
+<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap-grid.css" rel="stylesheet">
 
+<div class="row">
+    <div class="col-6">
+        <label>用户</label>
+        <input type="text" id="userName" list="users" class="form-control" />
+        <datalist id="users">
+            <option value="Kevin">
+            <option value="Cherry">
+            <option value="Melissa">
+        </datalist>
+        <input type="button" id="btnConnect" value="登录" class="btn" />
+        <input type="button" id="btnDisconnect" value="注销" class="btn" />
+        <input type="button" id="btnExit" value="断开" class="btn" hidden="hidden" />
+        <br />
 
-<label>用户</label>
-<input type="text" id="userName" list="users" class="form-control" />
-<datalist id="users">
-    <option value="Kevin">
-    <option value="Cherry">
-    <option value="Melissa">
-</datalist>
-<input type="button" id="btnConnect" value="登录" class="btn" />
-<input type="button" id="btnDisconnect" value="注销" class="btn" />
-<input type="button" id="btnExit" value="断开" class="btn" hidden="hidden" />
-<br />
+        <label>组名</label>
+        <input type="text" id="group" list="groups" class="form-control" />
+        <datalist id="groups">
+            <option value="Group1">
+            <option value="Group2">
+            <option value="Group3">
+        </datalist>
+        <input type="button" id="btnJoinGroup" value="加入组" class="btn" />
+        <input type="button" id="btnQuitGroup" value="退出组" class="btn" />
+        <br />
 
-<label>组名</label>
-<input type="text" id="group" list="groups" class="form-control" />
-<datalist id="groups">
-    <option value="Group1">
-    <option value="Group2">
-    <option value="Group3">
-</datalist>
-<input type="button" id="btnJoinGroup" value="加入组" class="btn" />
-<input type="button" id="btnQuitGroup" value="退出组" class="btn" />
-<br />
+        <label>用户ID</label>
+        <input type="text" id="target" class="form-control" />
+        <label for="msg">消息</label>
+        <input type="text" id="msg" class="form-control" />
+        <input type="button" id="btnTalkTo" value="私信" class="btn" />
+        <input type="button" id="btnTalkToGroup" value="组播" class="btn" />
+        <input type="button" id="btnTalkToAll" value="广播" class="btn" />
+    </div>
 
-<label>用户ID</label>
-<input type="text" id="target" class="form-control" />
-<label for="msg">消息</label>
-<input type="text" id="msg" class="form-control" />
-<input type="button" id="btnTalkTo" value="私信" class="btn" />
-<input type="button" id="btnTalkToGroup" value="组播" class="btn" />
-<input type="button" id="btnTalkToAll" value="广播" class="btn" />
-
-<br />
-<label>消息</label>
-<ul id="messages"></ul>
-
+    <div  class="col-6">
+        <label>消息</label>
+        <ul id="messages"></ul>
+    </div>
+</div>
     <script type="text/javascript">
         $(function () {
             // SignalR connection
