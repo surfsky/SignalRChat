@@ -143,7 +143,7 @@
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.tbAddr);
             this.Name = "ChatForm";
-            this.Text = "SignalR Chat Sample";
+            this.Text = "SignalR Core Chat Sample";
             this.Load += new System.EventHandler(this.ChatForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

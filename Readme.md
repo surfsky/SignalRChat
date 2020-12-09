@@ -6,9 +6,43 @@ SignalR webform, mvc, aspnetcore, windowform 聊天示例程序
 - http://surfsky.github.com
 - http://surfsky.cnblogs.com
 
-LastUpdate: 2020-05
+LastUpdate: 2020-12
+
+
+# SignalR Official sites
+
+netframework
+
+- https://docs.microsoft.com/zh-cn/aspnet/signalr/
+- https://docs.microsoft.com/en-us/aspnet/signalr/overview/getting-started/tutorial-getting-started-with-signalr
+- https://github.com/SignalR/SignalR
+
+
+netcore
+
+- https://dotnet.microsoft.com/apps/aspnet/signalr
+- https://github.com/dotnet/aspnetcore/tree/master/src/SignalR
+
 
 # 功能
+
+## 项目
+
+- [x] ASP.NET WebForm
+      网站运行后可以测试：
+      https://localhost:44395/signalr/hubs
+      https://localhost:44395/signalr/chatHub
+- [x] ASP.NET MVC
+- [x] ASP.NET Core RazorPage
+- [x] WinForm
+
+
+经过测试 
+
+    sinalR webform/mvc 采用 jquery 版本
+    signalR core 为独立版本（无需jquery）
+    这两个版本的协议不能互通，连接不上
+    winform 客户端只能支持 sinalr core 版本的 
 
 ## Chat 功能
 - [x] 发送

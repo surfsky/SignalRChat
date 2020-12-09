@@ -1,26 +1,34 @@
-﻿@{
-    ViewBag.Title = "Chat";
-}
+﻿@page
+@model TestSignalRCore.Pages.Chat1Model
+新版本的signalr 已经不支持jquery 了
+该示例尚未实现。待改造
 
 <h2>@ViewBag.Message</h2>
 <input type="text" id="msg" />
-<input type="button" id="broadcast" value="发送" />
+<input type="button" id="btnSend" value="发送" />
 <input type="button" id="btnStop" value="停止" />
 <ul id="messages"></ul>
 
 @section scripts
 {
-<script type="text/javascript">
-    $(function () {
-        var connection = $.connection('/Chat');
-        connection.received(function (data) {
-            $('#messages').append('<li>' + data + '</li>');
-        });
-        connection.start();
+    <script src="~/js/jquery.signalR-2.4.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // singalR
+            var connection = $.connection('/Chat');
+            connection.received(function (data) {
+                $('#messages').append('<li>' + data + '</li>');
+            });
+            connection.start();
 
-        $("#broadcast").click(function () {connection.send($('#msg').val());});
-        $("#btnStop").click(function ()   {connection.stop();});
-    });
-</script>
+            // events
+            $("#btnSend").click(function () { connection.send($('#msg').val()); });
+            $("#btnStop").click(function () { connection.stop(); });
+        });
+    </script>
 }
 
+
+
+@{
+}

@@ -12,6 +12,7 @@ namespace App.Hubs
 {
     /// <summary>
     /// 聊天 Hub. SignalR 好像只留下这个模式了。
+    /// 未完成
     /// </summary>
     [Authorize]
     public class IMHub : Hub
@@ -24,12 +25,20 @@ namespace App.Hubs
             return Send(connectionId, msg);
         }
 
+        /// <summary>广播消息</summary>
+        public async Task Broadcast2(string message)
+        {
+            // 给所有客户端发消息，附带2个参数
+            await Clients.All.SendAsync("broadcastMessage", message);
+        }
+
+
         /// <summary>消息处理</summary>
         //protected Task Do(MessageType type, string to, string data)
-        protected Task Do(string data)
+        public Task Do(string data)
         {
             // 解析data
-            ClientMessage msg = data.ParseJson<ClientMessage>(true);
+            var msg = data.ParseJson<ClientMessage>(true);
             if (msg == null)
                 return Broadcast(null);
 

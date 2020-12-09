@@ -24,7 +24,8 @@
 </head>
 <body>
     <div id="shape"></div>
-    <script>$shape = $("#shape");
+    <script>
+        $shape = $("#shape");
         var connection = new signalR.HubConnectionBuilder().withUrl('/Draw').build();
 
         connection.on('shapeMoved', function(x, y) {

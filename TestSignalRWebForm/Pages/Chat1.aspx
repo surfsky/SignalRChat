@@ -10,7 +10,7 @@
 
 <script type="text/javascript">
     $(function () {
-        var connection = $.connection('/Chat');
+        var connection = $.connection('/Chats');
         connection.received(function (data) {
             $('#messages').append('<li>' + data + '</li>');
         });

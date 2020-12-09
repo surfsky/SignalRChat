@@ -1,5 +1,7 @@
 ﻿<%@ Page MasterPageFile="~/Site.Master"  %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
+
 <script src="/Scripts/jquery.signalR-2.4.1.min.js" ></script>
 <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap-grid.css" rel="stylesheet">
 
@@ -45,7 +47,7 @@
     <script type="text/javascript">
         $(function () {
             // SignalR connection
-            var connection = $.connection('/Chat');
+            var connection = $.connection('/Chats');
             connection.received(function (data) {
                 // 如果服务器端发送的是对象，客户端会自动解析为对象。否则要自己处理一下。
                 var o = JSON.parse(data); 

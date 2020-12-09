@@ -1,0 +1,10 @@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Chat">Chat</a>
+                        </li>
+        /// <summary>供客户端调用的服务器端代码</summary>
+        //public void Send(string message)
+        //{
+        //    var name = Guid.NewGuid().ToString().ToUpper();
+        //    // 调用所有客户端的sendMessage方法???
+        //    Clients.All.sendMessage(name, message);
+        //}

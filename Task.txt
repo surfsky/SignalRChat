@@ -1,0 +1,6 @@
+TestSignalCore
+    Chat1
+    Chat2
+    Chat3
+
+IMHub

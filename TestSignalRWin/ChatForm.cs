@@ -33,7 +33,7 @@ namespace TestSignalRWin
         {
             UpdateState(connected: false);
             _connection = new HubConnectionBuilder().WithUrl(tbAddr.Text).Build();
-            _connection.On<string, string>("broadcastMessage", (s1, s2) => OnSend(s1, s2));
+            _connection.On<string, string>("showMessage", (s1, s2) => ShowMessage(s1, s2));
             Log(Color.Gray, "Starting connection...");
             try
             {
@@ -49,6 +49,13 @@ namespace TestSignalRWin
             UpdateState(connected: true);
             tbMessage.Focus();
         }
+
+        private void ShowMessage(string name, string message)
+        {
+            Log(Color.Black, name + ": " + message);
+        }
+
+
 
         private async void btnDisconnect_Click(object sender, EventArgs e)
         {
@@ -93,11 +100,6 @@ namespace TestSignalRWin
             {
                 Log(Color.Red, ex.ToString());
             }
-        }
-
-        private void OnSend(string name, string message)
-        {
-            Log(Color.Black, name + ": " + message);
         }
 
 

@@ -7,8 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSignalRMVC", "TestSigna
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{59006F86-B095-4824-A2E8-60A782769A17}"
 	ProjectSection(SolutionItems) = preProject
+		Code.txt = Code.txt
 		Readme.md = Readme.md
 		SignalR.md = SignalR.md
+		Task.txt = Task.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSignalRWebForm", "TestSignalRWebForm\TestSignalRWebForm.csproj", "{7416B19C-86EA-4DD7-8A67-EA80D7907E55}"

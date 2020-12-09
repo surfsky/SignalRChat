@@ -4,10 +4,9 @@
 
 <h2>Chat</h2>
 <div class="container">
-    <input type="text" id="message" />
-    <input type="button" id="sendmessage" value="Send" />
-    <input type="hidden" id="displayname" />
-    <ul id="discussion"></ul>
+    <input type="text" id="tbMessage" />
+    <input type="button" id="btnSend" value="Send" />
+    <ul id="messages"></ul>
 </div>
 
 @section scripts
@@ -18,32 +17,28 @@
     <script>
         $(function () {
             // 1、引用自动生成的集线器代理 必须用小写字母开头
-            var chat = $.connection.chatHub;
+            var proxy = $.connection.chatHub;
+
+            // 3、定义服务器端调用的客户端方法来显示新消息
+            proxy.client.showMessage = function (message) {
+                $('#messages').append('<li>' + htmlEncode(message) + '</li>');
+            };
 
             // 2、开始连接服务器 done函数表明建立连接成功后为发送按钮注册了一个click事件
             $.connection.hub.start().done(function () {
-                $('#sendmessage').click(function () {
-                    // 调用服务器端集线器的Send方法 也要小写开头
-                    // 清空输入框信息并获取焦点
-                    chat.server.send($('#message').val());
-                    $('#message').val('').focus();
+                $('#btnSend').click(function () {
+                    // 调用服务器端集线器方法(要小写开头)
+                    proxy.server.broadcast($('#tbMessage').val());
                 });
             });
 
-            // 3、定义服务器端调用的客户端sendMessage来显示新消息
-            chat.client.sendMessage = function (name, message) {
-                $('#discussion').append('<li><strong>' + htmlEncode(name)
-                    + '</strong>: ' + htmlEncode(message) + '</li>');
-            };
-
             // 设置焦点到输入框
-            $('#message').focus();
+            $('#tbMessage').focus();
         });
 
         // 为显示的消息进行Html编码
         function htmlEncode(value) {
-            var encodedValue = $('<div />').text(value).html();
-            return encodedValue;
+            return $('<div />').text(value).html();
         }
     </script>
 }

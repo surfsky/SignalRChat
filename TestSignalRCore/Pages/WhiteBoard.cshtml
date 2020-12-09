@@ -11,7 +11,6 @@
             crossorigin="anonymous"></script>
     <title>WhiteBoard</title>
     <style>
-
         canvas {
             cursor: crosshair;
             border: 1px solid #000000;
@@ -29,7 +28,8 @@
         <option value="blue">Blue</option>
     </select>
     <div id="output"></div>
-    <script>var canvas = document.getElementById('canvas');
+    <script>
+        var canvas = document.getElementById('canvas');
         var ctx = canvas.getContext('2d');
         var canvasx = $(canvas).offset().left;
         var canvasy = $(canvas).offset().top;
